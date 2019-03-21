@@ -4,3 +4,4 @@
 .project
 .settings/
 .vscode
+/target/
