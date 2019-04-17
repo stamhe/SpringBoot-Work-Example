@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "Common.proto";
+
+option java_multiple_files = true;
+option java_package = "com.stamhe.springboot.user.proto";
+option java_outer_classname = "UserOuter";
+
+package com.stamhe.springboot.user.proto;
+
+service User {
+    // 简单消息
+    rpc UserInfo ( UserRequest) returns (  com.stamhe.springboot.common.proto.CommonReply ) {}
+}
+
+message UserRequest {
+    fixed64 UserId = 1;
+}
+
