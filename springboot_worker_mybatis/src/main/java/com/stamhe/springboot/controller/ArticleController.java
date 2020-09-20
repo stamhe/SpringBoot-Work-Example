@@ -1,14 +1,14 @@
 package com.stamhe.springboot.controller;
 
-import java.util.Date;
-
+import com.stamhe.springboot.mapper.Article2Mapper;
+import com.stamhe.springboot.mapper.ArticleMapper;
+import com.stamhe.springboot.model.ArticleModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.stamhe.springboot.mapper.ArticleMapper;
-import com.stamhe.springboot.model.ArticleModel;
+import java.util.Date;
 
 @RestController
 @RequestMapping("/article")
@@ -16,6 +16,9 @@ public class ArticleController {
 	
 	@Autowired
 	private ArticleMapper articleMapper;
+	
+	@Autowired
+	private Article2Mapper article2Mapper;
 
 	// http://localhost:8080/article/add
 	@RequestMapping("/add")
@@ -40,6 +43,14 @@ public class ArticleController {
 	public ArticleModel detailAction(@PathVariable("id")Long id)
 	{
 		ArticleModel articleModel = articleMapper.getDetail(id);
+		return articleModel;
+	}
+	
+	// http://localhost:8080/article/detail2/1
+	@RequestMapping(value="/detail2/{id}")
+	public ArticleModel detail2Action(@PathVariable("id")Long id)
+	{
+		ArticleModel articleModel = article2Mapper.getDetail(id);
 		return articleModel;
 	}
 }
