@@ -63,6 +63,11 @@
           <artifactId>junit</artifactId>
           <scope>test</scope>
         </dependency>
+    
+          <dependency>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+          </dependency>
     </dependencies>
     <!-- 
     使用Spring Boot微服务搭建框架，在eclipse和Idea下能正常运行，但是在打成jar包部署或者直接使用java -jar命令的时候，
