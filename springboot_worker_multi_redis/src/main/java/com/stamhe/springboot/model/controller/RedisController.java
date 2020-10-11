@@ -1,15 +1,17 @@
 package com.stamhe.springboot.model.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import com.alibaba.fastjson.JSON;
+import com.stamhe.springboot.model.UserModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.stamhe.springboot.model.UserModel;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/redis")
@@ -81,5 +83,36 @@ public class RedisController {
         hashMap.put("1", user);
         
         return hashMap;
+	}
+	
+	/**
+	 * http://127.0.0.1:8080/redis/getnull
+	 * 演示了直接存储 POJO 对象的示例
+	 * @return
+	 */
+	@RequestMapping("/getnull")
+	@ResponseBody
+	public String getnullAction()
+	{
+		String data = (String) redis2Template.opsForValue().get("k10000");
+		System.out.println(data);
+		Object parse = JSON.parse(data);
+		System.out.println(parse);
+		return data;
+	}
+	
+	@RequestMapping("/listjson")
+	@ResponseBody
+	public String listjsonAction()
+	{
+		List<String> data = Arrays.asList("aa", "bb", "cc", "dd");
+		String strData = JSON.toJSONString(data);
+		System.out.println(strData);
+		List<String> newData = JSON.parseArray(strData, String.class);
+		for (String t : newData) {
+			System.out.println(t);
+		}
+		
+		return strData;
 	}
 }
