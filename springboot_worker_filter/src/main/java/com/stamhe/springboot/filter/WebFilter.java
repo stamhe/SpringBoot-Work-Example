@@ -23,7 +23,15 @@ public class WebFilter {
 		
 		return filter;
 	}
-
+	
+	/**
+	 * https://mp.weixin.qq.com/s/UVy1if4LOQSTS9sM5EM1Jw
+	 * 首先需要实现 Filter接口然后重写它的三个方法
+	 *
+	 * init 方法：在容器中创建当前过滤器的时候自动调用
+	 * destory 方法：在容器中销毁当前过滤器的时候自动调用
+	 * doFilter 方法：过滤的具体操作
+	 */
 	public class MyFilter implements Filter
 	{
 		@Override
