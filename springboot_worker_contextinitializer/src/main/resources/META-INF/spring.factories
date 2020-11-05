@@ -1,0 +1,9 @@
+# Initializers
+org.springframework.context.ApplicationContextInitializer=\
+com.stamhe.springboot.initializer.HelloApplicationContextInitializer
+
+# Application Listeners
+org.springframework.context.ApplicationListener=
+# Run Listeners
+org.springframework.boot.SpringApplicationRunListener=\
+com.stamhe.springboot.listener.HelloApplicationRunListener
