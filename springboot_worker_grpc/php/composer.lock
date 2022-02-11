@@ -8,23 +8,17 @@
     "packages": [
         {
             "name": "google/protobuf",
-            "version": "v3.7.1",
+            "version": "v3.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/protocolbuffers/protobuf-php.git",
-                "reference": "0657d28864692480c3d8506ba4fc90e8813deae5"
+                "reference": "758a0ef01c7bdf20d7ff31295d2af872547cc072"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/0657d28864692480c3d8506ba4fc90e8813deae5",
-                "reference": "0657d28864692480c3d8506ba4fc90e8813deae5",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://dl.laravel-china.org/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "url": "https://api.github.com/repos/protocolbuffers/protobuf-php/zipball/758a0ef01c7bdf20d7ff31295d2af872547cc072",
+                "reference": "758a0ef01c7bdf20d7ff31295d2af872547cc072",
+                "shasum": ""
             },
             "require": {
                 "php": ">=5.5.0"
@@ -51,7 +45,11 @@
             "keywords": [
                 "proto"
             ],
-            "time": "2019-03-26T18:06:41+00:00"
+            "support": {
+                "issues": "https://github.com/protocolbuffers/protobuf-php/issues",
+                "source": "https://github.com/protocolbuffers/protobuf-php/tree/v3.15.0"
+            },
+            "time": "2021-02-18T22:06:03+00:00"
         },
         {
             "name": "grpc/grpc",
@@ -108,5 +106,6 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.2.0"
 }
